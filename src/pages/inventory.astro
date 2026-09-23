@@ -1,32 +1,25 @@
 ---
-import '../styles/global.css';
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getCollection } from 'astro:content';
 
-const pageTitle = "winbyte | inventory";
+const pageTitle = "inventory";
 const allPosts = await getCollection('inventory');
 const sortedPosts = allPosts.sort((a, b) => b.data.postDate.getTime() - a.data.postDate.getTime());
-
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>{pageTitle}</h1>
-  <p>
+  <h1>inventory</h1>
+  <p class="section-desc">
     a catalog of the various electronics i own and use!
   </p>
-  <section>
+  <section class="inventory-grid">
     {
       sortedPosts.map((post) => (
         <a href={`/posts/${post.id}`} class="inventory-item">
           <article>
-            {/*
-            <img style="float: right;" src={item.frontmatter.image.url} width="225" height="150" alt={item.frontmatter.image.alt} />
-            image embed to be implemented
-            */}
             <h2>{post.data.title}</h2>
             <p class="item-date">
-              Date Added:
-              {new Date(post.data.postDate).toLocaleDateString("en-US", {
+              Date Added: {new Date(post.data.postDate).toLocaleDateString("en-US", {
                 month: "long",
                 day: "numeric",
                 year: "numeric",
@@ -41,50 +34,68 @@ const sortedPosts = allPosts.sort((a, b) => b.data.postDate.getTime() - a.data.p
 </BaseLayout>
 
 <style>
-  .inventory-item {
+  .section-desc {
     margin-bottom: 2rem;
-    padding: 1rem;
+    color: var(--text-muted);
+  }
+
+  .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .inventory-item {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    color: inherit;
+  }
+
+  .inventory-item:hover {
     text-decoration: none;
   }
-  .inventory-item h2 {
-    margin-bottom: 0.5rem;
-    color: #94b3c1;
-    font-family: "nunito",
-      sans-serif;
-    font-weight: 700;
-  }
-  .item-date {
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 650;
-    color: #a0aec0;
-    font-family: "nunito",
-      sans-serif;
-  }
-  .item-excerpt {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #afc6ed;
-    font-family: "nunito",
-      sans-serif;
-  }
+
   article {
-    background-color: rgba(0, 0, 0, 0.153);
-    border-radius: 15px;
-    padding: 0.8rem;
-    transition: background-color 0.20s ease-in-out;
-    text-decoration: none;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 4px;
+    padding: 1.25rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.15s ease;
   }
 
   article:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: none;
+    background-color: var(--bg-card-hover);
+    border-color: var(--border-card-hover);
+    transform: translateY(-2px);
   }
 
-  article a {
-    text-decoration: none;
+  .inventory-item h2 {
+    margin: 0 0 0.5rem;
+    color: var(--text-heading);
+    font-family: var(--font-family);
+    font-size: 1.35rem;
+    font-weight: 600;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .item-date {
+    margin: 0 0 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: var(--font-family);
+  }
+
+  .item-excerpt {
+    font-size: 0.975rem;
+    line-height: 1.55;
+    color: var(--text-main);
+    font-family: var(--font-family);
+    margin: 0;
   }
 </style>

@@ -1,7 +1,5 @@
 ---
-import '../styles/global.css';
 import BaseLayout from "../layouts/BaseLayout.astro";
-import BlogPostLayout from '../layouts/BlogPostLayout.astro';
 import { getCollection } from 'astro:content';
 
 const pageTitle: string = 'winbyte | blog';
@@ -10,11 +8,11 @@ const sortedPosts = allPosts.sort((a, b) => b.data.postDate.getTime() - a.data.p
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>{pageTitle}</h1>
-  <p>
+  <h1>blog</h1>
+  <p class="section-desc">
     random things i write about, mostly tech related, as well as some personal stuff.
   </p>
-  <section>
+  <section class="blog-list">
     {
       sortedPosts.map((post) => (
         <a href={`/posts/${post.id}`} class="blog-post">
@@ -36,50 +34,64 @@ const sortedPosts = allPosts.sort((a, b) => b.data.postDate.getTime() - a.data.p
 </BaseLayout>
 
 <style>
-  .blog-post {
+  .section-desc {
     margin-bottom: 2rem;
-    padding: 1rem;
+    color: var(--text-muted);
+  }
+
+  .blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .blog-post {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+
+  .blog-post:hover {
     text-decoration: none;
   }
-  .blog-post h2 {
-    margin-bottom: 0.5rem;
-    color: #94b3c1;
-    font-family: "nunito",
-      sans-serif;
-    font-weight: 700;
-  }
-  .post-date {
-    margin-bottom: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 650;
-    color: #a0aec0;
-    font-family: "nunito",
-      sans-serif;
-  }
-  .post-excerpt {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #afc6ed;
-    font-family: "nunito",
-      sans-serif;
-  }
+
   article {
-    background-color: rgba(0, 0, 0, 0.153);
-    border-radius: 15px;
-    padding: 0.8rem;
-    transition: background-color 0.20s ease-in-out;
-    text-decoration: none;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-radius: 4px;
+    padding: 1.25rem 1.5rem;
+    transition: all 0.15s ease;
   }
 
   article:hover {
-    background-color: rgba(0, 0, 0, 0.05);
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: none;
+    background-color: var(--bg-card-hover);
+    border-color: var(--border-card-hover);
+    transform: translateY(-2px);
   }
 
-  article a {
-    text-decoration: none;
+  .blog-post h2 {
+    margin: 0 0 0.4rem;
+    color: var(--text-heading);
+    font-family: var(--font-family);
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .post-date {
+    margin: 0 0 0.6rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-family: var(--font-family);
+  }
+
+  .post-excerpt {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--text-main);
+    font-family: var(--font-family);
+    margin: 0;
   }
 </style>
