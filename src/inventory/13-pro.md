@@ -6,6 +6,11 @@ description: 'My cell phone!'
 image:
     url: '/images/13-pro.png' 
     alt: 'iPhone 13 Pro in Sierra Blue'
+specs:
+    - "SoC: Apple A15 Bionic"
+    - "Storage: 256GB"
+    - "Display: 120Hz ProMotion OLED"
+    - "Color: Sierra Blue"
 ---
 ____________________________________________________________________________________________
 

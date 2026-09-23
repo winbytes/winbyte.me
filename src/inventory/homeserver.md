@@ -6,6 +6,11 @@ description: 'My unRAID based home server / NAS solution.'
 image:
     url: '/images/5050.png' 
     alt: 'Dell OptiPlex 5050'
+specs:
+    - "Model: Dell OptiPlex 5050 MT"
+    - "CPU: Intel Core i5-7500"
+    - "RAM: 40GB DDR4"
+    - "Storage: 16TB Array (unRAID)"
 ---
 ____________________________________________________________________________________________
 This server comes in handy for accessing my data within and outside of my network. It was just set up a month or so ago as of writing this, and I hope to

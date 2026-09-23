@@ -24,6 +24,7 @@ const inventory = defineCollection({
 			url: z.string(),
 			alt: z.string(),
 		}),
+		specs: z.union([z.array(z.string()), z.record(z.string())]).optional(),
 	})
 });
 
