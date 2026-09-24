@@ -5,22 +5,32 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout pageTitle={frontmatter.title}>
   <article class="post-content">
+    <div class="post-nav">
+      <a href="/blog" class="back-button">
+        <span aria-hidden="true">&larr;</span> back to blog
+      </a>
+    </div>
+
     <div class="post-header">
       <div class="post-header-info">
         <h1>{frontmatter.title}</h1>
-        <p class="post-desc"><em>{frontmatter.description}</em></p>
-        <p class="post-meta">
-          📅 Posted on: {frontmatter.postDate.toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </p>
+        {frontmatter.description && (
+          <p class="post-desc"><em>{frontmatter.description}</em></p>
+        )}
+        {frontmatter.postDate && (
+          <p class="post-meta">
+            📅 Posted on: {new Date(frontmatter.postDate).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </p>
+        )}
       </div>
 
       {frontmatter.image && frontmatter.image.url && (
         <div class="post-featured-image">
-          <img src={frontmatter.image.url} alt={frontmatter.image.alt} loading="eager" />
+          <img src={frontmatter.image.url} alt={frontmatter.image.alt || frontmatter.title} loading="eager" />
         </div>
       )}
     </div>
@@ -32,13 +42,46 @@ const { frontmatter } = Astro.props;
 </BaseLayout>
 
 <style>
+  .post-nav {
+    margin-bottom: 1.5rem;
+  }
+
+  .back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 0.35rem 0.75rem;
+    border-radius: 3px;
+    background: rgba(13, 19, 34, 0.5);
+    border: 1px solid var(--border-card);
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .back-button:hover {
+    color: var(--text-heading);
+    border-color: var(--border-card-hover);
+    background: var(--bg-card-hover);
+    text-decoration: none;
+  }
+
   .post-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 2rem;
-    margin-bottom: 1rem;
+    padding-bottom: 1.25rem;
   }
+
+:global(.markdown-body hr) {
+    margin: 0.5rem 0 1.25rem !important;
+  }
+
 
   .post-header-info {
     flex: 1;
@@ -102,6 +145,6 @@ const { frontmatter } = Astro.props;
   }
 
   .markdown-body hr {
-    margin: 1.5rem 0 2rem;
+    margin: 0.75rem 0 1.25rem;
   }
 </style>

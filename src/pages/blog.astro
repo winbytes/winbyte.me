@@ -15,7 +15,7 @@ const sortedPosts = allPosts.sort((a, b) => b.data.postDate.getTime() - a.data.p
   <section class="blog-list">
     {
       sortedPosts.map((post) => (
-        <a href={`/posts/${post.id}`} class="blog-post">
+        <a href={`/blog/${post.id}`} class="blog-post">
           <article>
             <h2>{post.data.title}</h2>
             <p class="post-date">

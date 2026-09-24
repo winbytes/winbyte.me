@@ -29,13 +29,15 @@ const hasImage = Boolean(frontmatter.image && frontmatter.image.url);
       <div class="item-title-block">
         <h1>{frontmatter.title}</h1>
         {frontmatter.description && <p class="item-desc"><em>{frontmatter.description}</em></p>}
-        <p class="item-meta">
-          📅 Date Added: {frontmatter.postDate.toLocaleDateString("en-US", {
-            month: "long",
-            day: "numeric",
-            year: "numeric",
-          })}
-        </p>
+        {frontmatter.postDate && (
+          <p class="item-meta">
+            📅 Date Added: {new Date(frontmatter.postDate).toLocaleDateString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}
+          </p>
+        )}
       </div>
 
       <div class="card-nav-spacer" aria-hidden="true"></div>

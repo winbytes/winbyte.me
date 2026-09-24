@@ -22,7 +22,7 @@ const sortedPosts = allPosts.sort((a, b) => b.data.postDate.getTime() - a.data.p
           : [];
 
         return (
-          <a href={`/posts/${post.id}`} class="inventory-item">
+          <a href={`/inventory/${post.id}`} class="inventory-item">
             <article>
               <div class="item-top-row">
                 <div class="item-header-text">
