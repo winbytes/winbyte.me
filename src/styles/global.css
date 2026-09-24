@@ -54,6 +54,7 @@ h1 {
   font-size: 2.75rem;
   font-weight: 300;
   line-height: 1.15;
+  margin-top: 0;
 }
 
 h2 {
@@ -63,6 +64,10 @@ h2 {
   border-bottom: 1px solid var(--border-card);
   padding-bottom: 0.35rem;
   margin-top: 2rem;
+}
+
+h1 + h2 {
+  margin-top: 1.25rem;
 }
 
 h3 {
@@ -107,7 +112,7 @@ header {
   border-radius: 4px;
   color: var(--text-main);
   margin-top: 1.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
 }
 
 .hamburger {
@@ -176,7 +181,7 @@ header {
     position: relative;
     padding: 10px;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   .hamburger {
