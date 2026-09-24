@@ -1,35 +1,34 @@
 ---
 layout: ../../layouts/InventoryItemLayout.astro
-title: 'OptiPlex 5050 - Home Server'
+title: 'HP Elite Z440 - Server'
 postDate: 2023-07-01
 description: 'My unRAID based home server / NAS solution.'
 image:
-    url: '/images/5050.png' 
-    alt: 'Dell OptiPlex 5050'
+    url: '/images/z440.png' 
+    alt: 'HP Elite Z440'
 # Max character length per line: 35-38 chars
 specs:
-    - "Model: Dell OptiPlex 5050 MT"
-    - "CPU: Intel Core i5-7500 3.40GHz"
-    - "RAM: 40GB DDR4 (32GB + 8GB)"
-    - "GPU: Palit GeForce GT 730"
+    - "Model: HP Elite Z440 Workstation"
+    - "CPU: Intel Xeon E5-2680v4 2.4GHz 14-core"
+    - "RAM: 32GB DDR4 ECC"
+    - "GPU: NVIDIA Quadro M2000"
     - "UPS: APC Back-UPS BE600M1"
 other:
     - "OS: unRAID"
-    - "Homebridge Server"
     - "Tailscale (LAN access)"
-    - "Nextcloud (photo backup)"
+    - "PhotoPrism (photo/video backup)"
     - "Zipline (file & link share)"
     - "Gatus (service monitoring)"
-    - "Homepage (dashboard)"
+    - "Crafty (Minecraft server)"
     - "Vaultwarden (passwords)"
     - "Jellyfin (media)"
-    - "qui"
+    - "qui (torrent management)"
     - "Beszel (system monitoring)"
     - "CloudBeaver (database)"
 otherTitle: 'Services & Software'
 ---
 
-This server comes in handy for accessing my data within and outside of my network. It was just set up a month or so ago as of writing this, and I hope to find even more uses for it as time passes! It is powerful enough to host a game server for friends, run VMs as a hypervisor, or simply run Docker containers. It was quite a task to manage to fit all of these drives inside this mini tower case..
+This server comes in handy for accessing my data within and outside of my network. I hope to find even more uses for it as time passes! It is powerful enough to host a game server for friends, run VMs as a hypervisor, or simply run Docker containers.
 
 ### Storage Configuration
 <ul>

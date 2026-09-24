@@ -4,7 +4,7 @@ title: 'Apple MacBook Air M4 (2025)'
 postDate: 2025-11-02
 description: 'Main portable computer.'
 image:
-    url: '/images/macbook.png' 
+    url: '/images/macbook.webp' 
     alt: 'Silver 2025 MacBook Air'
 # Max character length per line: 35-38 chars
 specs:
@@ -13,11 +13,11 @@ specs:
     - "Storage: 256GB SSD"
     - "Display: 13.6-inch Liquid Retina (2560x1664)"
 other:
-    - "OS: macOS"
+    - "OS: macOS Sequoia"
     - "Browser: Waterfox"
-    - "Code Editor: VScode"
-    - "Email: Outlook Classic (Office LTSC 2024)"
-    - "VPN: Eddie (AirVPN)"
+    - "Code Editor: Visual Studio Code"
+    - "Email: Mail + Outlook for Mac"
+    - "VPN: Surfshark"
 otherTitle: 'Software Configuration'
 ---
 
