@@ -6,6 +6,7 @@ description: 'Daily driver cell phone.'
 image:
     url: '/images/iphone-17.png' 
     alt: 'iPhone 17 in White'
+# Max character length per line: 35-38 chars
 specs:
     - "SoC: Apple A19"
     - "Capacity: 256GB"

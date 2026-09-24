@@ -6,6 +6,7 @@ description: 'Main portable computer.'
 image:
     url: '/images/macbook.png' 
     alt: 'Silver 2025 MacBook Air'
+# Max character length per line: 35-38 chars
 specs:
     - "SoC: Apple M4 (10-core CPU, 10-core GPU)"
     - "RAM: 16GB Unified Memory"

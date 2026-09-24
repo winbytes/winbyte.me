@@ -6,6 +6,7 @@ description: 'My unRAID based home server / NAS solution.'
 image:
     url: '/images/5050.png' 
     alt: 'Dell OptiPlex 5050'
+# Max character length per line: 35-38 chars
 specs:
     - "Model: Dell OptiPlex 5050 MT"
     - "CPU: Intel Core i5-7500 3.40GHz"
