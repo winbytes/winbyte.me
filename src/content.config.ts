@@ -25,6 +25,8 @@ const inventory = defineCollection({
 			alt: z.string(),
 		}),
 		specs: z.union([z.array(z.string()), z.record(z.string())]).optional(),
+		other: z.union([z.array(z.string()), z.record(z.string())]).optional(),
+		otherTitle: z.string().optional(),
 	})
 });
 
