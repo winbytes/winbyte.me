@@ -57,6 +57,10 @@ h1 {
   margin-top: 0;
 }
 
+header + h2 {
+  margin-top: 0;
+}
+
 h2 {
   font-size: 1.65rem;
   font-weight: 400;
@@ -96,7 +100,7 @@ a {
   transition: color 0.15s ease;
 }
 
-a:hover:not(.blog-post):not(.inventory-item):not(.nav-links a) {
+a:hover:not(.blog-post):not(.inventory-item):not(.nav-links a):not(.site-brand) {
   color: var(--text-link-hover);
   text-decoration: underline;
 }
@@ -113,6 +117,30 @@ header {
   color: var(--text-main);
   margin-top: 1.5rem;
   margin-bottom: 1.25rem;
+}
+
+.site-brand {
+  font-size: 1.15rem;
+  font-family: var(--font-family);
+  font-weight: 600;
+  color: var(--text-heading);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  padding: 0 12px;
+  border-radius: 3px;
+  transition: all 0.15s ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.site-brand:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-heading);
+  text-decoration: none;
 }
 
 .hamburger {
@@ -135,30 +163,39 @@ header {
 
 @media screen and (min-width: 636px) {
   header {
-    text-align: center;
-    padding: 4px 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 5px 10px;
+    gap: 6px;
+    box-sizing: border-box;
   }
 
   .nav-links {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     gap: 4px;
     margin: 0;
-    padding: 4px;
+    padding: 0;
   }
 
   .nav-links a {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-size: 1.05rem;
     font-family: var(--font-family);
     font-weight: 400;
-    padding: 10px 18px;
+    height: 38px;
+    line-height: 1;
+    padding: 0 16px;
     border-radius: 3px;
     transition: all 0.15s ease-out;
     background: transparent;
     color: var(--text-muted);
+    box-sizing: border-box;
   }
 
   .nav-links a:hover,
@@ -176,22 +213,27 @@ header {
 
   header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     position: relative;
-    padding: 10px;
+    padding: 6px 10px;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    box-sizing: border-box;
   }
 
   .hamburger {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38px;
+    padding: 0 10px;
   }
 
   .nav-links {
     display: none;
     position: absolute;
-    top: 56px;
+    top: calc(100% + 8px);
     left: 50%;
     transform: translateX(-50%);
     width: 100%;
@@ -214,8 +256,10 @@ header {
     text-decoration: none;
     font-size: 1.05rem;
     font-family: var(--font-family);
-    padding: 12px 16px;
-    display: block;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 0;
     transition: all 0.15s ease-out;
     background: transparent;
@@ -224,6 +268,7 @@ header {
     text-align: center;
     width: 100%;
     border-bottom: 1px solid var(--border-card);
+    box-sizing: border-box;
   }
 
   .nav-links a:last-child {
